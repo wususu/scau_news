@@ -1,0 +1,86 @@
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=lists&catid=16 HTTP/1.1" 200 2897
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=lists&catid=15 HTTP/1.1" 200 3084
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=360 HTTP/1.1" 200 4695
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=358 HTTP/1.1" 200 4989
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /xw/201702/t20170216_144423.htm HTTP/1.1" 200 19936
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=342 HTTP/1.1" 200 3460
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): 202.116.162.11
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:388] DEBUG "GET /articleAction_querySingleArticle?article.articleId=1401 HTTP/1.1" 200 None
+Wed, 01 Mar 2017 13:54:30 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=296 HTTP/1.1" 200 4140
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /xw/201611/t20161114_142936.htm HTTP/1.1" 200 19658
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=290 HTTP/1.1" 200 4555
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /xw/201610/t20161028_142587.htm HTTP/1.1" 200 19465
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=270 HTTP/1.1" 200 4330
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=267 HTTP/1.1" 200 4271
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /xw/201610/t20161017_142229.htm HTTP/1.1" 200 22322
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=263 HTTP/1.1" 200 3970
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=257 HTTP/1.1" 200 4094
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=247 HTTP/1.1" 200 4384
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=241 HTTP/1.1" 200 4141
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /xw/201609/t20160919_141746.htm HTTP/1.1" 200 23559
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /xw/201609/t20160914_141701.htm HTTP/1.1" 200 19005
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): www.scau.edu.cn
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:388] DEBUG "GET /xw/201609/t20160914_141691.htm HTTP/1.1" 200 18260
+Wed, 01 Mar 2017 13:54:31 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=15&id=230 HTTP/1.1" 200 4353
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=23&id=367 HTTP/1.1" 200 3424
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=366 HTTP/1.1" 200 3588
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=365 HTTP/1.1" 200 4212
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=24&id=364 HTTP/1.1" 200 3682
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=23&id=363 HTTP/1.1" 200 4080
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=22&id=362 HTTP/1.1" 200 3265
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=18&id=361 HTTP/1.1" 200 3305
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=18&id=359 HTTP/1.1" 200 3792
+Wed, 01 Mar 2017 13:54:32 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=24&id=357 HTTP/1.1" 200 4144
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=356 HTTP/1.1" 200 5373
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=354 HTTP/1.1" 200 4102
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=20&id=335 HTTP/1.1" 200 5918
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=352 HTTP/1.1" 200 4297
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=21&id=351 HTTP/1.1" 200 4034
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=20&id=350 HTTP/1.1" 200 4749
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=24&id=349 HTTP/1.1" 200 4427
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=348 HTTP/1.1" 200 3892
+Wed, 01 Mar 2017 13:54:33 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:34 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=19&id=347 HTTP/1.1" 200 3895
+Wed, 01 Mar 2017 13:54:34 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:34 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=22&id=346 HTTP/1.1" 200 3766
+Wed, 01 Mar 2017 13:54:34 connectionpool.py[line:208] INFO Starting new HTTP connection (1): jwc.scau.edu.cn
+Wed, 01 Mar 2017 13:54:34 connectionpool.py[line:388] DEBUG "GET /jwc/index.php?m=content&c=index&a=show&catid=24&id=345 HTTP/1.1" 200 4175
+Wed, 01 Mar 2017 13:54:34 log.py[line:19] INFO ('共爬取', 20, '条教务处【新闻】： ', 0, ' 条更新 | ', 20, ' 条重复')
+Wed, 01 Mar 2017 13:54:34 log.py[line:19] INFO ('共爬取', 20, '条教务处【公告】： ', 0, ' 条更新 | ', 20, ' 条重复')

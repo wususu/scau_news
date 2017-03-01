@@ -1,11 +1,16 @@
-from hmt_news.db_config import *
+from db_config import *
 import pymysql
-from hmt_news.jwc_spider import *
+import jwc_spider
 import hashlib
+from log import my_log
 
 
 def sove_data():
-    spider = JWCSpider()
+    """
+    md5 加密项
+    :return:
+    """
+    spider = jwc_spider.JWCSpider()
     spider.text()
     global n
     global p
@@ -22,17 +27,22 @@ def sove_data():
 
 
 def into_db():
+    """
+    数据入库
+    :return:
+    """
     conn = pymysql.connect(host=host, port=port, user=user, password=password, db=db, charset='utf8')
     cursor = conn.cursor()
     sql = "insert into news (title, href, md5, origin, news_time) VALUES (%s, %s, %s, %s, %s)"
     try:
-        flag = 0
+        flag_n = 0
+        flag_p = 0
         for i in n:
             try:
                 cursor.execute(sql, (i['title'], i['href'], i['md5'], 1, i['time']))
                 conn.commit()
             except pymysql.err.IntegrityError:
-                flag+=1
+                flag_n += 1
                 pass
         for i in p:
             try:
@@ -40,11 +50,16 @@ def into_db():
                 conn.commit()
                 print('ok')
             except pymysql.err.IntegrityError:
-                flag+=1
+                flag_p += 1
                 pass
     finally:
         conn.close()
-        print(flag)
+        count_p = len(p)
+        count_n = len(n)
+        message_n = '共爬取',count_n,'条教务处【新闻】： ',count_n-flag_n,' 条更新 | ',flag_n,' 条重复'
+        message_p = '共爬取',count_p,'条教务处【公告】： ',count_p-flag_p,' 条更新 | ',flag_n,' 条重复'
+        my_log('info', message_n)
+        my_log('info', message_p)
 
 
 if __name__ == '__main__':

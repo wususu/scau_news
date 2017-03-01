@@ -36,8 +36,8 @@ class JWCSpider():
                 tag_span = tag.find('span')
                 href = tag_a['href']
                 title = tag_a.get_text()
-                print('href: ', href)
-                print('title: ', title)
+                # print('href: ', href)
+                # print('title: ', title)
                 temp_dict['href'] = href
                 temp_dict['title'] = title
                 temp_list.append(temp_dict)
@@ -103,14 +103,15 @@ class JWCSpider():
             url = i['href']
             time = self.__get_news_time(url)
             i['time'] = time
-        print(self.__p_urls)
-        print(self.__n_urls)
+        # print(self.__p_urls)
+        # print(self.__n_urls)
 
     def get_n_news(self):
         return self.__n_urls
 
     def get_p_news(self):
         return self.__p_urls
+
 
 # if __name__ == '__main__':
 #     instance = JWCSpider()
