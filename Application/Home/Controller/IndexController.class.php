@@ -1,65 +1,170 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends Controller {
-    # 所有信息 json
-    private $query;
-    private $publishes;
-    private $publishes_n;
-    private $publishes_p;
+use Think\Model;
 
+class IndexController extends Controller {
+    # 查询条件
+    private $query = array();
+    # origin值
+    private $origin;
+    # 查询天数
+    private $days;
+    # 默认每页条数
+    private $limit = 8;
+    # 第几页；
+    private $page = 1;
+    # 每页第一条
+    private $start_limit = 0;
+    private $News;
+    private $count;
+    # 最新信息的时间
+    private $last_news_time;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->News = M('News');
+        $this->first_load();
+    }
 
     public function index(){
         $this->display('Index/index');
     }
 
+    private function write_origin($origin){
+        $this->origin = $origin;
+    }
+
+    private function write_days($days){
+        $this->days = $days;
+    }
+
+    private function write_limit($limit){
+        $this->limit = $limit;
+    }
+
+    private function write_page($page){
+        $this->page = $page;
+    }
+
+    private function write_start_limit(){
+        $start_limit = ($this->page-1) * $this->limit;
+        if ($this->origin == 1){
+            $num = $this->count['count_n'];
+        }elseif ($this->origin == 2){
+            $num = $this->count['count_p'];
+        }else{
+            $num = $this->count['count_a'];
+        }
+        if ($num > $this->count) {
+            $this->error_request('已无更多数据');
+        }else{
+            $this->start_limit = $start_limit;
+        }
+    }
+
+    private function write_last_news_time($time){
+        $this->last_news_time = $time;
+    }
+
+    public function first_load(){
+        $count['count_a'] = $this->News->count();
+        $count['count_n'] = $this->News->where("origin = 1")->count();
+        $count['count_p'] = $this->News->where("origin = 2")->count();
+        $this->count_array($count);
+        $time = $this->News->Max('news_time');
+        $this->write_last_news_time($time);
+    }
+
+    private function count_array($count){
+        foreach ($count as $key=>$value){
+            $this->count[$key] = $value;
+        }
+    }
+
     # API: 开始
     public function api_start(){
+        header('Content-type: application/json');
         if (isset($_GET['origin'])){
-            echo $this->api_origin();
+            $this->write_origin($_GET['origin']);
+        }
+        if (isset($_GET['limit'])){
+            $this->write_limit($_GET['limit']);
+        }
+        if (isset($_GET['days'])){
+            $this->write_days($_GET['days']);
+        }
+        if (isset($_GET['page'])){
+            $this->write_page($_GET['page']);
+            $this->write_start_limit();
+        }
+        $this->myecho($this->return_data());
+    }
+
+    public function build_query(){
+        if ($this->origin != 0){
+            $this->query['origin'] = $this->origin;
+        }
+        if (isset($this->days)){
+            $str = "-".$this->days." day";
+            $start_date = date('Y-m-d h:i:s', strtotime($str));
+            $end_date = date('Y-m-d h:i:s');
+//            $this->query['_string'] = "news_time < '".$end_date."'AND news_time > '".$start_date."'";
+            $this->query['news_time'] = array('between', array($start_date, $end_date));
         }
     }
 
-    # API: judge origin
-    private function api_origin(){
-        if ($_GET['origin'] == 1){
-            return isset($this->publishes_n)? $this->publishes_n : $this->origin_publishes_from_db(1);
-        }elseif ($_GET['origin'] == 2){
-            return isset($this->publishes_p)? $this->publishes_p : $this->origin_publishes_from_db(2);
-        }elseif ($_GET['origin'] == 0){
-            return isset($this->publishes)? $this->publishes : $this->get_all_publishes();
-        }else{
-            return self::encode('origin 参数错误');
+    private function judge_limit($limit_start, $limit){
+        return $this->News->where($this->query)->limit($limit_start, $limit);
+    }
+
+    private function judge_order($sql){
+        return $sql->order('-news_time');
+    }
+
+    private function judge_select($sql){
+        $result = $sql->select();
+        return $result;
+    }
+
+    private function search_from_db(){
+        $this->build_query();
+        $sql_1 = $this->judge_limit($this->start_limit, $this->limit);
+        $sql_2 = $this->judge_order($sql_1);
+        $ret = $this->judge_select($sql_2);
+        return $ret;
+    }
+
+    private function sove_data($ret){
+        $data['count'] = $this->count;
+        $data['origin'] = $this->origin;
+        $data['num'] = $this->limit;
+        $data['page'] = $this->page;
+        $data['news'] = $ret;
+        return $data;
+    }
+
+    private function return_data(){
+        $ret = $this->search_from_db();
+        $data = $this->sove_data($ret);
+        $this->check_count();
+        return $data;
+    }
+
+    private function check_count(){
+        $new_count = $this->News->count();
+        if ($new_count > $this->count){
+            $this->first_load();
         }
     }
 
-    # 根据origin获取数据
-    private function origin_publishes_from_db($origin=1){
-        $this->set_query("select id, title, href, origin, news_time from news where origin = $origin");
-        $temp = $this->get_all_publishes_from_db($this->query);
-        if ($temp == false){
-            return false;
-        }
-        $temp = self::encode($temp);
-        $origin==1? $this->publishes_n = $temp: $this->publishes_p = $temp;
-        return $temp;
+    private function myecho($data){
+        echo self::encode($data);
     }
 
-    # 设置搜索语句
-    private function set_query($query){
-        $this->query = $query;
-    }
-
-    # 获取所有
-    public function get_all_publishes(){
-        $query = "select id, title, href, origin, news_time from news";
-        $temp = $this->get_all_publishes_from_db($query);
-        if ($temp == false){
-            return false;
-        }
-        $temp = self::encode($temp);
-        $this->publishes = $temp;
-        return $this->publishes;
+    private function error_request($info){
+        echo self::encode('错误： '.$info);
     }
 
     # 编码为 json
@@ -67,19 +172,4 @@ class IndexController extends Controller {
         return json_encode($data, JSON_UNESCAPED_UNICODE);
     }
 
-    # 数据库链接
-    private function get_all_publishes_from_db($query){
-        try{
-            $mysql = new \PDO('mysql:host=localhost;dbname=hmt_news;charset=utf8', 'root', 'root' );
-        }catch (\PDOException $e){
-            die('数据库连接失败');
-        }
-        $result = $mysql->query($query);
-        if ($result->rowCount() > 0){
-            $ret = $result->fetchAll();
-        }
-        $result = null;
-        $mysql = null;
-        return isset($ret) ? $ret : false;
-    }
 }

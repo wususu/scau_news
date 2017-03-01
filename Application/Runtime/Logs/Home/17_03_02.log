@@ -1,0 +1,441 @@
+[ 2017-03-02T00:11:46+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=1&days=9&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+
+[ 2017-03-02T00:12:32+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=1&days=9&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE `origin` = 1 AND ( news_time < '2017-03-02 12:12:32'AND news_time > '2017-02-21 12:12:32' ) ORDER BY -news_time  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000068s ]
+
+[ 2017-03-02T00:12:49+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=1&days=9&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `news` WHERE `origin` = 1 AND ( news_time < '2017-03-02 12:12:49'AND news_time > '2017-02-21 12:12:49' ) ORDER BY -news_time  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000074s ]
+
+[ 2017-03-02T00:12:53+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=1&days=9&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE `origin` = 1 AND ( news_time < '2017-03-02 12:12:53'AND news_time > '2017-02-21 12:12:53' ) ORDER BY -news_time  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2017-03-02T00:12:58+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:12:58'AND news_time > '2017-02-21 12:12:58' ) ORDER BY -news_time  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000071s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000116s ]
+
+[ 2017-03-02T00:13:17+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:13:17'AND news_time > '2017-02-21 12:13:17' ) ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000066s ]
+
+[ 2017-03-02T00:13:29+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:13:29'AND news_time > '2017-02-10 12:13:29' ) ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2017-03-02T00:13:33+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:13:33'AND news_time > '2017-02-10 12:13:33' ) ORDER BY -news_time  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000076s ]
+
+[ 2017-03-02T00:13:57+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:13:57'AND news_time > '2017-02-10 12:13:57' ) ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000082s ]
+
+[ 2017-03-02T00:14:37+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000117s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:14:37'AND news_time > '2017-02-10 12:14:37' ) ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2017-03-02T00:15:03+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000052s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:15:03'AND news_time > '2017-02-10 12:15:03' ) ORDER BY -news_time  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000069s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000119s ]
+
+[ 2017-03-02T00:15:16+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:15:16'AND news_time > '2017-02-10 12:15:16' ) ORDER BY -news_time  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-03-02T00:28:07+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000072s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE ( news_time < '2017-03-02 12:28:07'AND news_time > '2017-02-10 12:28:07' ) ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000077s ]
+
+[ 2017-03-02T00:32:42+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-10 12:32:42' AND '2017-03-02 12:32:42' ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2017-03-02T00:32:43+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000041s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-10 12:32:43' AND '2017-03-02 12:32:43' ORDER BY -news_time  [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2017-03-02T00:32:44+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=20&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000075s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-10 12:32:44' AND '2017-03-02 12:32:44' ORDER BY -news_time  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2017-03-02T00:32:52+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 12:32:52' AND '2017-03-02 12:32:52' ORDER BY -news_time  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000071s ]
+
+[ 2017-03-02T00:33:40+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000055s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit(1,2) ) ORDER BY -news_time' at line 1
+ [ SQL语句 ] : SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 12:33:40' AND '2017-03-02 12:33:40' AND ( limit(1,2) ) ORDER BY -news_time 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit(1,2) ) ORDER BY -news_time' at line 1
+ [ SQL语句 ] : SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 12:33:40' AND '2017-03-02 12:33:40' AND ( limit(1,2) ) ORDER BY -news_time 
+
+[ 2017-03-02T01:14:09+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 01:14:09' AND '2017-03-02 01:14:09' ORDER BY -news_time LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000075s ]
+
+[ 2017-03-02T01:14:59+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 01:14:59' AND '2017-03-02 01:14:59' ORDER BY -news_time LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000044s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2017-03-02T01:16:06+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=20
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 01:16:06' AND '2017-03-02 01:16:06' ORDER BY -news_time LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2017-03-02T01:16:30+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&days=9&limit=5&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `news` WHERE `news_time` BETWEEN '2017-02-21 01:16:30' AND '2017-03-02 01:16:30' ORDER BY -news_time LIMIT 0,5   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2017-03-02T01:16:51+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&limit=5&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` ORDER BY -news_time LIMIT 0,5   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000068s ]
+
+[ 2017-03-02T01:17:16+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&limit=5&page=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `news` ORDER BY -news_time LIMIT 5,5   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000072s ]
+
+[ 2017-03-02T01:17:26+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&limit=5&page=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` ORDER BY -news_time LIMIT 45,5   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000075s ]
+
+[ 2017-03-02T01:17:35+08:00 ] 127.0.0.1 /hmt_jwc_push/index.php/Home/Index/api_start?origin=0&limit=5&page=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( origin = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MAX(news_time) AS tp_Max FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` ORDER BY -news_time LIMIT 610,5   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000074s ]
+
