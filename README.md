@@ -65,4 +65,16 @@
                 ]
                 
         }
+
 </code>
+        
+        count： 数据库信息条数
+        num： 本次信息条数
+        page： 当前页数
+        limit： 每页最大条数
+        news： 信息数据 
+                id： 信息编号
+                title： 信息标题
+                href： 信息内容链接
+                news_time： 发布时间
+                origin： 信息类型
