@@ -7,7 +7,7 @@ class IndexController extends Controller {
     # 查询条件
     private $query = array();
     # origin值
-    private $origin;
+    private $origin = 0;
     # 查询天数
     private $days;
     # 默认每页条数
@@ -20,6 +20,13 @@ class IndexController extends Controller {
     private $count;
     # 最新信息的时间
     private $last_news_time;
+    private $field=array(
+        'id',
+        'title',
+        'href',
+        'news_time',
+        'origin'
+    );
 
     public function __construct()
     {
@@ -68,7 +75,7 @@ class IndexController extends Controller {
         $this->last_news_time = $time;
     }
 
-    public function first_load(){
+    private function first_load(){
         $count['count_a'] = $this->News->count();
         $count['count_n'] = $this->News->where("origin = 1")->count();
         $count['count_p'] = $this->News->where("origin = 2")->count();
@@ -86,23 +93,23 @@ class IndexController extends Controller {
     # API: 开始
     public function api_start(){
         header('Content-type: application/json');
-        if (isset($_GET['origin'])){
+        if (isset($_GET['origin']) && $_GET['origin']!=''){
             $this->write_origin($_GET['origin']);
         }
-        if (isset($_GET['limit'])){
+        if (isset($_GET['limit']) && $_GET['limit']!=''){
             $this->write_limit($_GET['limit']);
         }
-        if (isset($_GET['days'])){
+        if (isset($_GET['days']) && $_GET['days']!=''){
             $this->write_days($_GET['days']);
         }
-        if (isset($_GET['page'])){
+        if (isset($_GET['page']) && $_GET['page']!=''){
             $this->write_page($_GET['page']);
             $this->write_start_limit();
         }
         $this->myecho($this->return_data());
     }
 
-    public function build_query(){
+    private function build_query(){
         if ($this->origin != 0){
             $this->query['origin'] = $this->origin;
         }
@@ -116,7 +123,7 @@ class IndexController extends Controller {
     }
 
     private function judge_limit($limit_start, $limit){
-        return $this->News->where($this->query)->limit($limit_start, $limit);
+        return $this->News->where($this->query)->limit($limit_start, $limit)->field($this->field);
     }
 
     private function judge_order($sql){
@@ -139,9 +146,11 @@ class IndexController extends Controller {
     private function sove_data($ret){
         $data['count'] = $this->count;
         $data['origin'] = $this->origin;
-        $data['num'] = $this->limit;
+        $data['limit'] = $this->limit;
         $data['page'] = $this->page;
+        $data['num'] = \count($ret);
         $data['news'] = $ret;
+
         return $data;
     }
 
