@@ -1,9 +1,9 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-use Think\Model;
+use Common\Controller\BaseUsersController;
 
-class IndexController extends Controller {
+
+class IndexController extends BaseUsersController {
     # 查询条件
     private $query = array();
     # origin值
@@ -92,6 +92,7 @@ class IndexController extends Controller {
 
     # API: 开始
     public function api_start(){
+        D('Users');
         header('Content-type: application/json');
         if (isset($_GET['origin']) && $_GET['origin']!=''){
             $this->write_origin($_GET['origin']);
@@ -106,7 +107,7 @@ class IndexController extends Controller {
             $this->write_page($_GET['page']);
             $this->write_start_limit();
         }
-        $this->myecho($this->return_data());
+        $this->my_echo($this->return_data());
     }
 
     private function build_query(){
@@ -168,17 +169,13 @@ class IndexController extends Controller {
         }
     }
 
-    private function myecho($data){
-        echo self::encode($data);
+    private function my_echo($data){
+        echo my_encode($data);
     }
 
     private function error_request($info){
-        echo self::encode('错误： '.$info);
+        echo my_encode($info);
     }
 
-    # 编码为 json
-    static function encode($data){
-        return json_encode($data, JSON_UNESCAPED_UNICODE);
-    }
 
 }
