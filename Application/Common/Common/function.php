@@ -36,3 +36,15 @@ function get_uuid($prefix='')
     $prefix.= substr($str, 20, 12);
     return $prefix;
 }
+
+function check_login()
+{
+    return (session('?uuid'))?true:false;
+}
+
+function unset_session()
+{
+    session('username', null);
+    session('uuid', null);
+    session('last_view', null);
+}

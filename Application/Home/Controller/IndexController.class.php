@@ -1,9 +1,10 @@
 <?php
 namespace Home\Controller;
-use Common\Controller\BaseUsersController;
+use Common\Controller\BaseController;
 
 
-class IndexController extends BaseUsersController {
+class IndexController extends BaseController
+{
     # 查询条件
     private $query = array();
     # origin值
@@ -176,6 +177,4 @@ class IndexController extends BaseUsersController {
     private function error_request($info){
         echo my_encode($info);
     }
-
-
 }

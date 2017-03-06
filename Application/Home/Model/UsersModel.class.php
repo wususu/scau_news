@@ -27,13 +27,14 @@ class UsersModel extends Model
 
     protected $pk = 'id';
 
-    public function login_update($model)
+    public function login_update($model, $username)
     {
         $data = array(
-            'last_login_time' => ''
+            'last_login_time' => date('Y-m-d H:i:s')
         );
-        $result =$model->data($data)->save();
-        echo 'login_update: '.$result.'<br/>';
+        $result =$model->where("username='$username' ")->save($data);
+        var_dump($result);
+        return $result;
     }
 
     public function regist_insert($model, $username, $password)
@@ -62,28 +63,13 @@ class UsersModel extends Model
     {
         $data['username'] = $username;
         $result = $model->where($data)->select();
-        if ($result)
-        {
-            return true;
-        }
-        return false;
+        return $result ? $result: false;
     }
 
-    public function check_passwd($model, $username, $password)
+    public function check_passwd($password, $user)
     {
-        $data = array(
-            'username' => $username,
-            'passwd' => $password
-        );
-        $result = $model->where($data)->select();
-        if ($result)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        $md5_passwd = my_md5($password, $user[0]['salt']);
+        return $md5_passwd == $user[0]['passwd'];
     }
 
 }
