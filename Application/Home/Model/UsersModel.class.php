@@ -33,7 +33,6 @@ class UsersModel extends Model
             'last_login_time' => date('Y-m-d H:i:s')
         );
         $result =$model->where("username='$username' ")->save($data);
-        var_dump($result);
         return $result;
     }
 
@@ -68,6 +67,7 @@ class UsersModel extends Model
 
     public function check_passwd($password, $user)
     {
+
         $md5_passwd = my_md5($password, $user[0]['salt']);
         return $md5_passwd == $user[0]['passwd'];
     }

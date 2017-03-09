@@ -24,4 +24,10 @@ class NewsModel extends Model
         'pic_urls'
     );
     protected $pk = 'id';
+
+    public function search($Model, $keyWard)
+    {
+        $result = $Model->where("title like '%".$keyWard."%'")->select();
+        return $result ? $result : false;
+    }
 }

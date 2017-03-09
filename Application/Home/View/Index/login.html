@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>HMT 信息平台</title>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/weui-1.1.1/dist/style/weui.css"/>
+    <script type="text/javascript" src="__PUBLIC__/jq.js"></script>
+    <style type="text/css">
+        .weui-cells__title{
+            font-size: large;
+            color: #0d0d0d;
+        }
+        .weui-cells__tips{
+            color: red;
+        }
+        .weui-article{
+            padding-bottom: 0;
+        }
+        p>img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<article class="weui-article">
+    <p><img src="../../../../../cut.jpg"></p>
+</article>
+<div class="weui-cells__title">登录</div>
+
+<div class="weui-cells__tips weui-cell_warn"></div>
+
+
+
+<div class="weui-cells">
+    <div class="weui-cell" id="nameCell" >
+        <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="nameInput" type="text" pattern="[0-9]*" placeholder="请输入用户名"/>
+        </div>
+        <div class="weui-cell__ft">
+            <i class="nameCron"></i>
+        </div>
+    </div>
+
+    <div class="weui-cell" id="passWdCell">
+        <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="passWdInput" type="password" pattern="[0-9]*" placeholder="请输入密码"/>
+        </div>
+        <div class="weui-cell__ft">
+            <i class="passWdCron"></i>
+        </div>
+    </div>
+</div>
+
+<div class="weui-btn-area">
+    <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
+</div>
+
+<div class="weui-footer weui-footer_fixed-bottom">
+    <p class="weui-footer__links">
+        <a href="javascript:home();" class="weui-footer__link">红满堂工作室</a>
+    </p>
+    <p class="weui-footer__text">Copyright &copy; 2016-2017 校园信息</p>
+</div>
+
+
+<div id="loadingToast" style="display:none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p class="weui-toast__content"></p>
+    </div>
+</div>
+
+<div id="successToast" class="" style="display: none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+        <p class="weui-toast__content">登录成功</p>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function login() {
+            var username = $.trim($('#nameInput').val());
+            var passwd = $.trim($('#passWdInput').val());
+            $.ajax({
+                url: 'http://localhost/hmt_jwc_push/index.php/Home/Users/user_api',
+                data: {
+                    'username': username,
+                    'password': passwd,
+                    'method': 'login'
+                },
+                dataType: 'json',
+                type: 'POST',
+                beforeSend: function () {
+                    $('#loadingToast').fadeIn(200);
+                    $('#loadingToast').fadeOut();
+                },
+                success: function (response) {
+                    if (response.msgCode == 400){
+                        $('#successToast').fadeIn(300);
+                        window.location.replace('http://localhost/hmt_jwc_push/index.php/Home/View/index');
+                    }else {
+                        $('.weui-cells__tips').html('用户名或密码错误');
+                    }
+                }
+            });
+        }
+        $('.weui-btn-area').click(function () {
+            login();
+        });
+        
+    });
+</script>
+</html>

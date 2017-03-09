@@ -42,6 +42,12 @@ function check_login()
     return (session('?uuid'))?true:false;
 }
 
+function clean_data($data){
+    //
+
+    return $data;
+}
+
 function unset_session()
 {
     session('username', null);

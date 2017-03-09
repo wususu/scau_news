@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Common\Controller\BaseController;
 
 
-class IndexController extends BaseController
+class NewsController extends BaseController
 {
     # 查询条件
     private $query = array();
@@ -34,10 +34,6 @@ class IndexController extends BaseController
         parent::__construct();
         $this->News = M('News');
         $this->first_load();
-    }
-
-    public function index(){
-        $this->display('Index/index');
     }
 
     private function write_origin($origin){

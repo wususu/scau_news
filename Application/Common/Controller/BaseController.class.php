@@ -23,11 +23,11 @@ class BaseController extends Controller
         {
             if(IS_AJAX)
             {
-                my_echo('您需要登录');
+                my_echo(404);
             }
             else
             {
-                $this->error('您需要登录');
+                $this->error('您需要登录', U('UserView/login'));
             }
         }
     }
