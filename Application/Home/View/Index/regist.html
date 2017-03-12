@@ -6,6 +6,7 @@
     <title>HMT 信息平台</title>
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/weui-1.1.1/dist/style/weui.css"/>
     <script type="text/javascript" src="__PUBLIC__/jq.js"></script>
+
     <style type="text/css">
         .weui-cells__title{
             font-size: large;
@@ -20,6 +21,11 @@
         p>img{
             width: 100%;
         }
+        .page_desc{
+            float: right;
+            padding-right:10px;
+        }
+
     </style>
 </head>
 <body>
@@ -27,7 +33,13 @@
 <article class="weui-article">
     <p><img src="../../../../../cut.jpg"></p>
 </article>
-<div class="weui-cells__title">注册</div>
+<div class="weui-cells__title">
+    注册
+    <!--登录链接-->
+    <p class="page_desc">
+        已有账号？<a href="#" class="link">登录</a>
+    </p>
+</div>
 
 <div class="weui-cells__tips weui-cell_warn"></div>
 
@@ -68,6 +80,8 @@
 <div class="weui-btn-area">
     <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
 </div>
+
+
 
 <div class="weui-footer weui-footer_fixed-bottom">
     <p class="weui-footer__links">
@@ -111,6 +125,9 @@
         window.passwd = true;
         $('.weui-dialog__btn').click(function () {
             $('.dialog').hide();
+        });
+        $('.link').click(function () {
+            self.location='login';
         });
 
         function errorMsg(msg, msgCode) {

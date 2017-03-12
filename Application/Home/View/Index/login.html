@@ -19,6 +19,10 @@
         p>img{
             width: 100%;
         }
+        .page_desc{
+            float: right;
+            padding-right:10px;
+        }
 
     </style>
 </head>
@@ -26,7 +30,12 @@
 <article class="weui-article">
     <p><img src="../../../../../cut.jpg"></p>
 </article>
-<div class="weui-cells__title">登录</div>
+<div class="weui-cells__title">
+    登录
+    <p class="page_desc">
+        没有账号？<a href="#" class="link">注册</a>
+    </p>
+</div>
 
 <div class="weui-cells__tips weui-cell_warn"></div>
 
@@ -85,6 +94,9 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
+        $('.link').click(function () {
+            self.location='regist';
+        });
         function login() {
             var username = $.trim($('#nameInput').val());
             var passwd = $.trim($('#passWdInput').val());

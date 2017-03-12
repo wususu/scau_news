@@ -6,7 +6,15 @@
     <title>HMT 信息平台</title>
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/weui-1.1.1/dist/style/weui.css"/>
     <script type="text/javascript" src="__PUBLIC__/jq.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
+        body{
+            font-size:16px;
+            font-family: weui;
+        }
+        .weui-panel{
+            padding-top: 1rem;
+        }
         .weui-cells__title{
             font-size: large;
             color: #0d0d0d;
@@ -22,11 +30,131 @@
             padding-top: 60px;
             padding-bottom: 40px;
         }
+        .bar-nav{
+            width: 100%;
+            margin:0;
+            padding:0;
+            top:0;
+            position: fixed;
+            height: 2.8rem;
+            z-index: 10;
+            background-color: mediumpurple;
+        }
+        .bar-nav>a{
+            float: right;
+        }
+        .search_icon{
+            width: 100%;
+            height: 100%;
+            top: -10%;
+            position: absolute;
+        }
+        .menu_icon{
+            width: 20%;
+            height: 80%;
+            position: absolute;
+            top: -0.5%;
+            left: -5%;
+        }
+        .fa-search{
+            float: right;
+            padding-top: 5px;
+            padding-right: 3%;
+            color: white;
+        }
+        .fa-bars{
+            float: left;
+            padding-left: 10px;
+            padding-top: 7px;
+            color: white;
+        }
+        .weui-actionsheet{
+            top: 45%;
+        }
+        .menu_list{
+            position: absolute;
+            width: 45%;
+            height: 90%;
+            left:27%;
+        }
+        li{
+            list-style: none;
+        }
+        .list{
+            background-color: mediumpurple;
+
+            width:100%;
+            text-align: center;
+            height:100%;
+            position: absolute;
+        }
+        .list a{
+            font-size: 1.3rem;
+            display: block;
+            line-height: 195%;
+            text-align: center;
+            text-decoration: none;
+            height: 100%;
+            color: white;
+            background-color: mediumpurple;
+        }
+        ul ul{
+            padding:0;
+            margin:0;
+            width:100%;
+            /*border:1px solid #333;*/
+            position: absolute;
+            top:30px;
+            left:-1px;
+            display: none;
+            border-radius: 0.3rem;
+            /* RGBa with 0.6 opacity */
+            background: rgba(0, 0, 0, 0.6);
+            /* For IE 5.5 - 7*/
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#999999);
+            /* For IE 8*/
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#999999)";
+        }
+        ul ul li {
+            text-align: center;
+            line-height: 35px;
+            font-size: 1.15rem;
+            color: white;;
+            position: relative;
+        }
+        .select{
+            display: none;
+        }
+
     </style>
     <script type="text/javascript" src="__PUBLIC__/jq.js"></script>
 </head>
 <body>
+<header class="bar bar-nav">
+    <ul class="menu_list">
+        <li id="list" class="list">
+            <a id="link" href="#" class="menu_show">微博</a>
+            <ul id="ull">
+                <li class="item select" id="webo">微博</li>
+                <li class="item" id="news">教务新闻</li>
+                <li class="item" id="shuxin">数信</li>
+                <li class="item" id="wechat">校园公众号</li>
+            </ul>
+        </li>
+    </ul>
+
+    <i class="fa fa-bars fa-2x" aria-hidden="true">
+        <a href="#" class="menu_icon"></a>
+    </i>
+
+    <i class="fa fa-search fa-2x" aria-hidden="true">
+        <a href="#" class="search_icon"></a>
+    </i>
+
+</header>
+
 <div class="weui-search-bar " id="search_bar">
+
     <form class="weui-search-bar__form">
         <div class="weui-search-bar__box">
             <i class="weui-icon-search"></i>
@@ -44,10 +172,24 @@
 
 <div class="weui-panel weui-panel_access">
     <div class="weui-panel weui-panel_access">
-        <div class="weui-panel__hd">教务处新闻公告</div>
+        <!--<div class="weui-panel__hd">-->
+        <!--</div>-->
         <div class="weui-panel__bd" id="container">
         </div>
     </div>
+</div>
+<div id="actionSheet_wrap">
+
+<div class="weui-skin_android" id="weui-android-actionsheet" style="display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-actionsheet">
+        <div class="weui-actionsheet__menu">
+            <div class="weui-actionsheet__cell">个人信息</div>
+            <div class="weui-actionsheet__cell logout">切换账号</div>
+            <div class="weui-actionsheet__cell" id="actionsheet_cancel_2">取消</div>
+        </div>
+    </div>
+</div>
 </div>
 
 <div class="weui-footer weui-footer_fixed-bottom">
@@ -61,6 +203,60 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
+    // 顶部菜单逻辑
+    var click = false;
+    $('#link').click(function () {
+        if(click==false)
+        {click=true;$('#ull').show()}else
+        {$('#ull').hide();click = false;}
+    });
+    $('.item').click(function () {
+        click = false;
+        $('#ull').hide();
+        $('.select').removeClass('select');
+        $(this).addClass('select');
+        $('#link').html($(this).html());
+    });
+
+
+    // 左右上角图标逻辑
+    $('.weui-search-bar').hide();
+    $('.search_icon').click(function () {
+        $('.bar-nav').hide();
+        $('#container').hide();
+        $('.weui-search-bar').show();
+        $('#search_input').focus();
+    });
+    $('#actionsheet_cancel_2').click(function () {
+        $('#weui-android-actionsheet').hide();
+
+    });
+    $('.menu_icon').click(function () {
+        $('#weui-android-actionsheet').show();
+    });
+    $('.weui-mask').click(function () {
+        $('#weui-android-actionsheet').hide();
+
+    });
+
+
+    $('.logout').click(function () {
+        // 注销
+        $.ajax({
+            url: 'http://localhost/hmt_jwc_push/index.php/Home/Users/user_api',
+            data: {'method': 'out'},
+            type: 'POST',
+            dataType: 'json',
+            success: function (response) {
+                if (response.msgCode == 100) {
+                     self.location='http://localhost/hmt_jwc_push/index.php/Home/UserView/login';
+                }
+            }
+        });
+
+    });
+
+
     window.ajax = false;
     window.pageFlag = true;
     window.limit=5;
@@ -140,9 +336,11 @@ $(document).ready(function () {
     });
     // 取消搜索事件
     $('#search_cancel').click(function () {
+        $('.weui-search-bar').hide();
         $('.search_show').empty();
         $('.weui-search-bar').removeClass('weui-search-bar_focusing');
         $('#container').show();
+        $('.bar-nav').show();
     });
     // 清除搜索文本事件
     $('#search_clear').click(function () {
