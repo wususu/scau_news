@@ -133,11 +133,10 @@
 <header class="bar bar-nav">
     <ul class="menu_list">
         <li id="list" class="list">
-            <a id="link" href="#" class="menu_show">微博</a>
+            <a id="link" href="#" class="menu_show">教务新闻</a>
             <ul id="ull">
-                <li class="item select" id="webo">微博</li>
-                <li class="item" id="news">教务新闻</li>
-                <li class="item" id="shuxin">数信</li>
+                <li class="item select" id="jwc">教务新闻</li>
+                <li class="item " id="shuxin">数信通知</li>
                 <li class="item" id="wechat">校园公众号</li>
             </ul>
         </li>
@@ -203,6 +202,24 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
+
+    window.ajax = false;
+    window.pageFlag = true;
+    window.limit=5;
+    window.load_flag = false;
+    window.origin='';
+    window.day='';
+    window.KIND_FLAG = 'jwc';
+
+    main();
+    // 开始
+    function main() {
+        start();
+        if ($(window).height() == $(document).height()){
+            loading();
+        }
+    }
+
     // 顶部菜单逻辑
     var click = false;
     $('#link').click(function () {
@@ -216,6 +233,25 @@ $(document).ready(function () {
         $('.select').removeClass('select');
         $(this).addClass('select');
         $('#link').html($(this).html());
+        // 重新加载
+        var kind = $(".select").attr("id");
+        if (kind != KIND_FLAG)
+        {
+            // reload()
+            if (kind == 'jwc')
+            {
+                main();
+                KIND_FLAG = kind;
+
+            }
+            else
+            {
+                KIND_FLAG = kind;
+                $('#container').empty();
+                alert("还没这类数据哦，快去戳程序员哥哥把！");
+            }
+
+        }
     });
 
 
@@ -257,16 +293,7 @@ $(document).ready(function () {
     });
 
 
-    window.ajax = false;
-    window.pageFlag = true;
-    window.limit=5;
-    window.load_flag = false;
-    window.origin='';
-    window.day='';
-    start();
-    if ($(window).height() == $(document).height()){
-        loading();
-    }
+
     function loading() {
         window.load_flag = true;
         window.page++;

@@ -30,15 +30,6 @@ class UsersController extends Controller
     {
         parent::__construct();
         $this->User = M('Users');
-//        if (session('?uuid'))
-//        {
-//            echo "aaaa";
-//            $this->msgCode = 402;
-//            $this->uuid = session('uuid');
-//            $this->userName = session('username');
-//            $this->lastView = session('lastView');
-//        }
-//        else {
             if (isset($_POST['method']) && $_POST['method'] != '') {
                 $this->postMethod = $_POST['method'];
                 if (isset($_POST['username']) && $_POST['username'] != '')
@@ -50,7 +41,7 @@ class UsersController extends Controller
                     $this->set_passwd($_POST['password']);
                 }
             }
-//        }
+
     }
 
     protected function set_passwd($passwd)
