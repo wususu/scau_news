@@ -117,8 +117,8 @@
         }
         ul ul li {
             text-align: center;
-            line-height: 35px;
-            font-size: 1.15rem;
+            line-height: 50px;
+            font-size: 1.4rem;
             color: white;;
             position: relative;
         }
@@ -191,6 +191,17 @@
 </div>
 </div>
 
+<div class="nodata" style="display: none" >
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">哟哦，</strong></div>
+        <div class="weui-dialog__bd">还没这类数据哦，快去戳程序员哥哥把！</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary closenodata">快点我 快点我</a>
+        </div>
+    </div>
+</div>
+
 <div class="weui-footer weui-footer_fixed-bottom">
     <p class="weui-footer__links">
         <a href="javascript:home();" class="weui-footer__link">红满堂工作室</a>
@@ -248,11 +259,24 @@ $(document).ready(function () {
             {
                 KIND_FLAG = kind;
                 $('#container').empty();
-                alert("还没这类数据哦，快去戳程序员哥哥把！");
+                show_alert();
+                close_alert();
             }
 
         }
     });
+
+    // 封装alert
+    function show_alert() {
+        console.log('in');
+        $('div.nodata').show();
+    }
+
+    function close_alert() {
+        $('.closenodata').click(function () {
+            $('.nodata').hide();
+        })
+    }
 
 
     // 左右上角图标逻辑
