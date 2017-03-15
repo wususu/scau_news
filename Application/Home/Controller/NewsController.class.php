@@ -90,7 +90,6 @@ class NewsController extends BaseController
     # API: 开始
     public function api_start(){
         D('Users');
-        header('Content-type: application/json');
         if (isset($_GET['origin']) && $_GET['origin']!=''){
             $this->write_origin($_GET['origin']);
         }

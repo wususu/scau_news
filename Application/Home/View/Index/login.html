@@ -3,8 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>HMT 信息平台</title>
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/weui-1.1.1/dist/style/weui.css"/>
-    <script type="text/javascript" src="__PUBLIC__/jq.js"></script>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/weui-1.1.1/dist/style/weui.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/jq.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
     <style type="text/css">
         .weui-cells__title{
             font-size: large;
@@ -28,7 +29,7 @@
 </head>
 <body>
 <article class="weui-article">
-    <p><img src="../../../../../cut.jpg"></p>
+    <p><img src="__PUBLIC__/picture/cut.jpg"></p>
 </article>
 <div class="weui-cells__title">
     登录
@@ -91,42 +92,19 @@
     </div>
 </div>
 
+<div class="dialog" style="display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">注册失败</strong></div>
+        <div class="weui-dialog__bd">发生error，快向前端程序员哥哥反馈吧</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">你敢戳我吗</a>
+        </div>
+    </div>
+</div>
+
 </body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.link').click(function () {
-            self.location='regist';
-        });
-        function login() {
-            var username = $.trim($('#nameInput').val());
-            var passwd = $.trim($('#passWdInput').val());
-            $.ajax({
-                url: 'http://localhost/hmt_jwc_push/index.php/Home/Users/user_api',
-                data: {
-                    'username': username,
-                    'password': passwd,
-                    'method': 'login'
-                },
-                dataType: 'json',
-                type: 'POST',
-                beforeSend: function () {
-                    $('#loadingToast').fadeIn(200);
-                    $('#loadingToast').fadeOut();
-                },
-                success: function (response) {
-                    if (response.msgCode == 400){
-                        $('#successToast').fadeIn(300);
-                        window.location.replace('http://localhost/hmt_jwc_push/index.php/Home/View/index');
-                    }else {
-                        $('.weui-cells__tips').html('用户名或密码错误');
-                    }
-                }
-            });
-        }
-        $('.weui-btn-area').click(function () {
-            login();
-        });
-        
-    });
+<script type="text/javascript" src="__PUBLIC__/js/login.js">
+
 </script>
 </html>

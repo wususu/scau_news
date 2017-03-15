@@ -13,6 +13,7 @@ function get_salt()
 
 function my_echo($msg)
 {
+    header('Content-type: application/json');
     echo my_encode($msg);
 }
 

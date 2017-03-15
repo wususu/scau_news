@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>HMT 信息平台</title>
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/weui-1.1.1/dist/style/weui.css"/>
-    <script type="text/javascript" src="__PUBLIC__/jq.js"></script>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/weui-1.1.1/dist/style/weui.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/jq.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+
 
     <style type="text/css">
         .weui-cells__title{
@@ -111,141 +113,15 @@
     <div class="weui-mask"></div>
     <div class="weui-dialog">
         <div class="weui-dialog__hd"><strong class="weui-dialog__title">注册失败</strong></div>
-        <div class="weui-dialog__bd">弹窗内容，告知当前页面信息等</div>
+        <div class="weui-dialog__bd">发生error，快向前端程序员哥哥反馈吧</div>
         <div class="weui-dialog__ft">
-            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">你敢戳我吗</a>
         </div>
     </div>
 </div>
 
 </body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        window.name = true;
-        window.passwd = true;
-        $('.weui-dialog__btn').click(function () {
-            $('.dialog').hide();
-        });
-        $('.link').click(function () {
-            self.location='login';
-        });
+<script type="text/javascript" src="__PUBLIC__/js/regiest.js">
 
-        function errorMsg(msg, msgCode) {
-            $('.weui-cells__tips').html(msg+",错误码： "+msgCode);
-        }
-
-        function checkValue() {
-            var username = $.trim($('#nameInput').val());
-            var passwd = $.trim($('#passWdInput').val());
-            var rpasswd = $.trim($('#rpassWdInput').val());
-            // test
-            var method = 'register';
-
-            if (username && passwd && rpasswd && passwd == rpasswd) {
-                $.ajax({
-                    url: 'http://localhost/hmt_jwc_push/index.php/Home/Users/user_api',
-                    dataType: 'json',
-                    type: 'POST',
-                    data: {
-                        'username': username,
-                        'password': passwd,
-                        'method': method
-                    },
-                    beforeSend: function () {
-                        $('#loadingToast').fadeIn(100);
-                        setTimeout(function () {
-                            $('#loadingToast').fadeOut(),2000
-                        });
-                    },
-                    success: function (response) {
-                        if (response.msgCode == '300') {
-                            function out() {
-                                $('#successToast').fadeOut();
-                            }
-                            $('#successToast').fadeIn(2000);
-                            out();
-                        }else {
-                            $('.dialog').show();
-                        }
-
-                    }
-                })
-            }
-        }
-
-        function checkUserName() {
-            $('#nameInput').focus(function () {
-                $('.weui-icon-warn ').removeClass('weui-icon-warn');
-                $('.weui-cell_warn').removeClass('weui-cell_warn');
-                $('.weui-cells__tips').html('');
-            });
-            $('#nameInput').blur(function (){
-                var username = $('#nameInput').val();
-                if (username && username != '') {
-                    $.ajax({
-                        url: 'http://localhost/hmt_jwc_push/index.php/Home/Users/user_api',
-                        data: {
-                            'username': username,
-                            'method': 'check'
-                        },
-                        dataType: 'json',
-                        type: 'POST',
-                        success: function (response) {
-                            if (response.msgCode == 302) {
-                                window.name = false;
-                                $('#nameCell').addClass('weui-cell_warn');
-                                $('.nameCron').addClass('weui-icon-warn');
-                                errorMsg("用户名已存在", response.msgCode);
-                            } else if (response.msgCode == 301){
-                                window.name = true;
-                                $('.nameCron ').removeClass('weui-icon-warn');
-                                $('#nameCell').removeClass('weui-cell_warn');
-                                $('.weui-cells__tips').html('');
-                            }
-                        }
-                    });
-                }
-            });
-        }
-
-        function checkRPassWd(){
-            var func = function () {
-                var passWd = $.trim($('#passWdInput').val());
-                var rpassWd = $.trim($('#rpassWdInput').val());
-                if (passWd == rpassWd){
-                        $('.rpassWdCron ').removeClass('weui-icon-warn');
-                        $('#rpassWdCell').removeClass('weui-cell_warn');
-                        $('.weui-cells__tips').html('');
-                        if (passWd != '') {
-                            window.passwd = true;
-                        }
-                }
-                else {
-                        window.passwd = false;
-                        $('#rpassWdCell').addClass('weui-cell_warn');
-                        $('.rpassWdCron').addClass('weui-icon-warn');
-                        errorMsg("密码不一致", '');
-                }
-            };
-            $('#rpassWdInput').keyup(func);
-            $('#passWdInput').keyup(func);
-        }
-
-        checkUserName();
-        checkRPassWd();
-
-        $('.weui-btn-area').click(function () {
-            if (window.name && window.passwd) {
-                checkValue();
-            }
-            if (!window.name){
-                errorMsg('用户名被注册', '');
-            }
-            if (!window.passwd){
-                errorMsg('密码不一致', '');
-            }
-            $('.weui-cells__warn').html('用户名已存在');
-        });
-    });
 </script>
 </html>
