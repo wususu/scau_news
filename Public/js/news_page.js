@@ -46,7 +46,7 @@
             {
                 KIND_FLAG = kind;
                 $('#container').empty();
-                show_alert();
+                show_alert('还没这类数据哦，快去戳程序员哥哥把！');
                 close_alert();
             }
 
@@ -54,14 +54,14 @@
     });
 
     // 封装alert
-    function show_alert() {
-        console.log('in');
-        $('div.nodata').show();
+    function show_alert(message) {
+        $('.new_dialog_message').html(message)
+        $('div.new_dialog').show();
     }
 
     function close_alert() {
         $('.closenodata').click(function () {
-            $('.nodata').hide();
+            $('.new_dialog').hide();
         })
     }
 
@@ -87,10 +87,15 @@
     });
 
 
+$('.user_center').click(function () {
+    show_alert('快催程序员哥哥加特效');
+    close_alert();
+});
+
 $('.logout').click(function () {
         // 注销
     $.ajax({
-        url:NEWS_API,
+        url:USER_API,
         data: {'method': 'out'},
         type: 'POST',
         dataType: 'json',
