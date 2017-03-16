@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 
 logging.basicConfig(
-    filename='logger.log',
+    filename='/home/janke/log/logger.log',
     level=logging.DEBUG,
     datefmt='%a, %d %b %Y %H:%M:%S',
     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s'

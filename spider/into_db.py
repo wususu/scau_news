@@ -58,6 +58,8 @@ def into_db():
         count_n = len(n)
         message_n = '共爬取',count_n,'条教务处【新闻】： ',count_n-flag_n,' 条更新 | ',flag_n,' 条重复'
         message_p = '共爬取',count_p,'条教务处【公告】： ',count_p-flag_p,' 条更新 | ',flag_n,' 条重复'
+        print(message_n)
+        print(message_p)
         my_log('info', message_n)
         my_log('info', message_p)
 

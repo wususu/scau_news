@@ -92,8 +92,8 @@ class JWCSpider():
         return False
 
     def text(self):
-        print(self.__p_urls)
-        print(self.__n_urls)
+        # print(self.__p_urls)
+        # print(self.__n_urls)
         for i in self.__n_urls:
             url = i['href']
             time = self.__get_news_time(url)
