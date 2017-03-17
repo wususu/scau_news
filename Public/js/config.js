@@ -3,7 +3,7 @@
  */
 window.DOMAIN = '';
 window.HTTP_TYPE = 'http://';
-window.HOST = 'localhost/';
+window.HOST = '192.168.232.2/';
 window.APP_PATH = 'hmt_jwc_push/index.php/Home/';
 window.LOGIN_PATH = 'UserView/login';
 window.REGISET_PATH = 'UserView/regiest';
