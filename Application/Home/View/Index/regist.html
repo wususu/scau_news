@@ -43,7 +43,15 @@
     </p>
 </div>
 
-<div class="weui-cells__tips weui-cell_warn"></div>
+<div class="weui-cells__tips weui-cell_warn username_exist" style="display: none">
+    <p>用户名已存在</p>
+</div>
+<div class="weui-cells__tips weui-cell_warn username_error" style="display: none">
+    <p>用户名含有不允许的特殊符号</p>
+</div>
+<div class="weui-cells__tips weui-cell_warn rpasswd_error" style="display: none">
+    <p>前后密码输入不一致</p>
+</div>
 
 
 
@@ -109,13 +117,13 @@
     </div>
 </div>
 
-<div class="dialog" style="display: none;">
+<div class="new_dialog" style="display: none" >
     <div class="weui-mask"></div>
     <div class="weui-dialog">
-        <div class="weui-dialog__hd"><strong class="weui-dialog__title">注册失败</strong></div>
-        <div class="weui-dialog__bd">发生error，快向前端程序员哥哥反馈吧</div>
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">哟哦，</strong></div>
+        <div class="weui-dialog__bd new_dialog_message"></div>
         <div class="weui-dialog__ft">
-            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">你敢戳我吗</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary closenodata">快点我 快点我</a>
         </div>
     </div>
 </div>

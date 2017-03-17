@@ -1,7 +1,6 @@
 /**
  * Created by janke on 17-3-15.
  */
-
     window.name = true;
     window.passwd = true;
     $('.weui-dialog__btn').click(function () {
@@ -11,17 +10,24 @@
         self.location='login';
     });
 
-    function errorMsg(msg, msgCode) {
-        $('.weui-cells__tips').html(msg+",错误码： "+msgCode);
+    function show_alert(message) {
+        $('.new_dialog_message').html(message)
+        $('div.new_dialog').show();
     }
 
+    function close_alert() {
+        $('.closenodata').click(function () {
+            $('.new_dialog').hide();
+        })
+    }
+
+    // 注册
     function checkValue() {
         var username = $.trim($('#nameInput').val());
         var passwd = $.trim($('#passWdInput').val());
         var rpasswd = $.trim($('#rpassWdInput').val());
         // test
         var method = 'register';
-
         if (username && passwd && rpasswd && passwd == rpasswd) {
             $.ajax({
                 url: USER_API,
@@ -45,24 +51,24 @@
                         }
                         $('#successToast').fadeIn(2000);
                         out();
-                    }else {
-                        $('.dialog').show();
+                        location.href = LOGIN_URL;
+                    }else if (response.msgCode == '202'){
+                        show_alert("用户名不得包含特殊符号哦");
                     }
                 },
                 error:function () {
-                    $('.dialog').show();
+                    show_alert("异步error");
                 }
             });
         }
     }
-
+    // 验证用户名是否被注册
     function checkUserName() {
         $('#nameInput').focus(function () {
             $('.weui-icon-warn ').removeClass('weui-icon-warn');
             $('.weui-cell_warn').removeClass('weui-cell_warn');
-            $('.weui-cells__tips').html('');
         });
-        $('#nameInput').blur(function (){
+        $('#nameInput').keyup(function (){
             var username = $('#nameInput').val();
             if (username && username != '') {
                 $.ajax({
@@ -74,26 +80,32 @@
                     dataType: 'json',
                     type: 'POST',
                     success: function (response) {
-                        if (response.msgCode == 302) {
+                        //　用户名已存在
+                        if (response.msgCode == '302') {
                             window.name = false;
                             $('#nameCell').addClass('weui-cell_warn');
                             $('.nameCron').addClass('weui-icon-warn');
-                            errorMsg("用户名已存在", response.msgCode);
-                        } else if (response.msgCode == 301){
+                            $('.username_exist').show();
+                        }
+                        // 用户名不存在
+                        else if (response.msgCode == '301'){
                             window.name = true;
                             $('.nameCron ').removeClass('weui-icon-warn');
                             $('#nameCell').removeClass('weui-cell_warn');
-                            $('.weui-cells__tips').html('');
-                        }else if(response.msgCode == 202){
+                            $('.username_exist').hide();
+                            $('.username_error').hide();
+                        }
+                        // 用户名不允许
+                        else if(response.msgCode == '202'){
                             window.name = false;
                             window.name = false;
                             $('#nameCell').addClass('weui-cell_warn');
                             $('.nameCron').addClass('weui-icon-warn');
-                            errorMsg("用户名含有不允许的特殊符号", response.msgCode);
+                            $('.username_error').show();
                         }
                     },
                     error:function () {
-                        $('.dialog').show();
+                        $('.dialog').show("异步error");
                     }
                 });
             }
@@ -104,19 +116,21 @@
         var func = function () {
             var passWd = $.trim($('#passWdInput').val());
             var rpassWd = $.trim($('#rpassWdInput').val());
+            // 密码校验通过
             if (passWd == rpassWd){
                 $('.rpassWdCron ').removeClass('weui-icon-warn');
                 $('#rpassWdCell').removeClass('weui-cell_warn');
-                $('.weui-cells__tips').html('');
+                $('.rpasswd_error').hide();
                 if (passWd != '') {
                     window.passwd = true;
                 }
             }
+            // 密码不一致
             else {
                 window.passwd = false;
                 $('#rpassWdCell').addClass('weui-cell_warn');
                 $('.rpassWdCron').addClass('weui-icon-warn');
-                errorMsg("密码不一致", '');
+                $('.rpasswd_error').show();
             }
         };
         $('#rpassWdInput').keyup(func);
@@ -131,10 +145,10 @@
             checkValue();
         }
         if (!window.name){
-            errorMsg('用户名被注册', '');
+            $('.username_error').show();
         }
         if (!window.passwd){
-            errorMsg('密码不一致', '');
+            $('.rpasswd_error').show();
         }
         $('.weui-cells__warn').html('用户名已存在');
     });

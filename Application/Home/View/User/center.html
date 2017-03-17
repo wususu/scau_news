@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>华农资讯</title>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/weui-1.1.1/dist/style/weui.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/jq.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+    <style type="text/css">
+        body{
+            font-size:16px;
+            font-family: weui;
+        }
+        .weui-panel{
+            padding-top: 2rem;
+        }
+        .bar-nav{
+            width: 100%;
+            margin:0;
+            padding:0;
+            top:0;
+            position: fixed;
+            height: 2.8rem;
+            z-index: 10;
+            background-color: cornflowerblue;
+        }
+        .bar-nav>a{
+            float: right;
+        }
+        .search_icon{
+            width: 100%;
+            height: 100%;
+            top: -10%;
+            position: absolute;
+        }
+        .menu_icon{
+            width: 20%;
+            height: 80%;
+            position: absolute;
+            top: -0.5%;
+            left: -5%;
+        }
+        .fa-search{
+            float: right;
+            padding-top: 5px;
+            padding-right: 3%;
+            color: white;
+        }
+        .fa-bars{
+            float: left;
+            padding-left: 10px;
+            padding-top: 7px;
+            color: white;
+        }
+
+        .menu_list{
+            position: absolute;
+            width: 45%;
+            height: 90%;
+            left:27%;
+        }
+        li{
+            list-style: none;
+        }
+        .list{
+            background-color: cornflowerblue;
+            width:100%;
+            text-align: center;
+            height:100%;
+            position: absolute;
+        }
+        .list a{
+            font-size: 1.3rem;
+            display: block;
+            line-height: 195%;
+            text-align: center;
+            text-decoration: none;
+            height: 100%;
+            color: white;
+            background-color: cornflowerblue;
+        }
+        ul ul{
+            padding:0;
+            margin:0;
+            width:100%;
+            /*border:1px solid #333;*/
+            position: absolute;
+            top:30px;
+            left:-1px;
+            display: none;
+            border-radius: 0.3rem;
+            /* RGBa with 0.6 opacity */
+            background: rgba(0, 0, 0, 0.6);
+            /* For IE 5.5 - 7*/
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#999999);
+            /* For IE 8*/
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#999999)";
+        }
+        ul ul li {
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.4rem;
+            color: white;;
+            position: relative;
+        }
+
+        .weui-media-box_appmsg .weui-media-box__hd{
+            width:145px;
+            height:145px;
+        }
+
+        .weui-cell{
+            padding:17px 35px;
+        }
+        .weui-cell__bd{
+            font-size: 1.3rem;
+        }
+        .text{
+            font-family: "Trebuchet MS", Arial, Verdana;
+            text-align:right;
+            color: #353535;
+            font-weight: inherit;
+            font-size: 15px;
+            float: right;
+        }
+        .aa{
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bar bar-nav">
+    <ul class="menu_list">
+        <li id="list" class="list">
+            <a id="link" href="#" class="menu_show">个人中心</a>
+        </li>
+    </ul>
+
+    <i class="fa fa-bars fa-2x" aria-hidden="true">
+        <a href="#" class="menu_icon"></a>
+    </i>
+
+    <i class="fa fa-search fa-2x" aria-hidden="true">
+        <a href="#" class="search_icon"></a>
+    </i>
+
+</header>
+
+
+<div class="weui-panel weui-panel_access">
+    <div class="weui-panel__bd">
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==" alt="">
+            </div>
+            <div class="weui-media-box__bd weui-cell_access">
+                <!--<h4 class="weui-media-box__title">标题一</h4>-->
+                <div class="weui-cell__ft">
+                    <input type="file"  name="image" style="opacity:0;filter:alpha(opacity=0);" id="inputfile"/>
+                </div>
+            </div>
+        </a>
+
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">用户名 :</div>
+            <div class="text name">
+                <span style="vertical-align:middle; font-size: 17px;">wususu</span>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">注册时间 :</div>
+            <div class="text regist-time">
+                <span>2017-12-32 12:11</span>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">上次登录 :</div>
+            <div class="text last-login-time">
+                <span>2018-01-23 12:23</span>
+            </div>
+        </div>
+    </div>
+<div class="aa">
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>修改密码</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>退出</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="__PUBLIC__/user_center.js">
+
+</script>
+</html>

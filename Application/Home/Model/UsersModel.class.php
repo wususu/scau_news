@@ -62,7 +62,7 @@ class UsersModel extends Model
     {
         $data['username'] = $username;
         $result = $model->where($data)->select();
-        return $result ? $result: false;
+        return $result? $result: false;
     }
 
     public function check_passwd($password, $user)
@@ -70,6 +70,13 @@ class UsersModel extends Model
 
         $md5_passwd = my_md5($password, $user[0]['salt']);
         return $md5_passwd == $user[0]['passwd'];
+    }
+
+    public function get_user_data($model, $username)
+    {
+        $data['username'] = $username;
+        $result = $model->where($data)->field('username, last_views, register_time, last_login_time')->select();
+        return $result? $result[0]: false;
     }
 
 }
